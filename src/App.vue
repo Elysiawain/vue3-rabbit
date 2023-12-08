@@ -4,7 +4,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div>
-    <el-button type="success">测试按钮</el-button>
   </div>
   <RouterView />
 </template>
