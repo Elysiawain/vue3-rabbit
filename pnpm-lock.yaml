@@ -58,6 +58,9 @@ devDependencies:
   npm-run-all2:
     specifier: ^6.1.1
     version: registry.npmmirror.com/npm-run-all2@6.1.1
+  sass:
+    specifier: ^1.69.5
+    version: registry.npmmirror.com/sass@1.69.5
   typescript:
     specifier: ~5.2.0
     version: registry.npmmirror.com/typescript@5.2.2
@@ -69,10 +72,10 @@ devDependencies:
     version: registry.npmmirror.com/unplugin-vue-components@0.26.0(vue@3.3.10)
   vite:
     specifier: ^5.0.5
-    version: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)
+    version: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)(sass@1.69.5)
   vitest:
     specifier: ^1.0.1
-    version: registry.npmmirror.com/vitest@1.0.2(@types/node@18.19.3)(jsdom@23.0.1)
+    version: registry.npmmirror.com/vitest@1.0.2(@types/node@18.19.3)(jsdom@23.0.1)(sass@1.69.5)
   vue-tsc:
     specifier: ^1.8.25
     version: registry.npmmirror.com/vue-tsc@1.8.25(typescript@5.2.2)
@@ -969,7 +972,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)
+      vite: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)(sass@1.69.5)
       vue: registry.npmmirror.com/vue@3.3.10(typescript@5.2.2)
     dev: true
 
@@ -2293,6 +2296,12 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  registry.npmmirror.com/immutable@4.3.4:
+    resolution: {integrity: sha512-fsXeu4J4i6WNWSikpI88v/PcVflZz+6kMhUfIwc5SY+poQRPnaf5V7qds6SUyUN3cVxEzuCab7QIoLOQ+DQ1wA==, tarball: https://registry.npmmirror.com/immutable/-/immutable-4.3.4.tgz}
+    name: immutable
+    version: 4.3.4
+    dev: true
+
   registry.npmmirror.com/import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==, tarball: https://registry.npmmirror.com/import-fresh/-/import-fresh-3.3.0.tgz}
     name: import-fresh
@@ -3221,6 +3230,18 @@ packages:
     version: 2.1.2
     dev: true
 
+  registry.npmmirror.com/sass@1.69.5:
+    resolution: {integrity: sha512-qg2+UCJibLr2LCVOt3OlPhr/dqVHWOa9XtZf2OjbLs/T4VPSJ00udtgJxH3neXZm+QqX8B+3cU7RaLqp1iVfcQ==, tarball: https://registry.npmmirror.com/sass/-/sass-1.69.5.tgz}
+    name: sass
+    version: 1.69.5
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: registry.npmmirror.com/chokidar@3.5.3
+      immutable: registry.npmmirror.com/immutable@4.3.4
+      source-map-js: registry.npmmirror.com/source-map-js@1.0.2
+    dev: true
+
   registry.npmmirror.com/saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==, tarball: https://registry.npmmirror.com/saxes/-/saxes-6.0.0.tgz}
     name: saxes
@@ -3687,7 +3708,7 @@ packages:
       spdx-expression-parse: registry.npmmirror.com/spdx-expression-parse@3.0.1
     dev: true
 
-  registry.npmmirror.com/vite-node@1.0.2(@types/node@18.19.3):
+  registry.npmmirror.com/vite-node@1.0.2(@types/node@18.19.3)(sass@1.69.5):
     resolution: {integrity: sha512-h7BbMJf46fLvFW/9Ygo3snkIBEHFh6fHpB4lge98H5quYrDhPFeI3S0LREz328uqPWSnii2yeJXktQ+Pmqk5BQ==, tarball: https://registry.npmmirror.com/vite-node/-/vite-node-1.0.2.tgz}
     id: registry.npmmirror.com/vite-node/1.0.2
     name: vite-node
@@ -3699,7 +3720,7 @@ packages:
       debug: registry.npmmirror.com/debug@4.3.4
       pathe: registry.npmmirror.com/pathe@1.1.1
       picocolors: registry.npmmirror.com/picocolors@1.0.0
-      vite: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)
+      vite: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)(sass@1.69.5)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3711,7 +3732,7 @@ packages:
       - terser
     dev: true
 
-  registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3):
+  registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)(sass@1.69.5):
     resolution: {integrity: sha512-MD3joyAEBtV7QZPl2JVVUai6zHms3YOmLR+BpMzLlX2Yzjfcc4gTgNi09d/Rua3F4EtC8zdwPU8eQYyib4vVMQ==, tarball: https://registry.npmmirror.com/vite/-/vite-5.0.6.tgz}
     id: registry.npmmirror.com/vite/5.0.6
     name: vite
@@ -3746,11 +3767,12 @@ packages:
       esbuild: registry.npmmirror.com/esbuild@0.19.8
       postcss: registry.npmmirror.com/postcss@8.4.32
       rollup: registry.npmmirror.com/rollup@4.6.1
+      sass: registry.npmmirror.com/sass@1.69.5
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents@2.3.3
     dev: true
 
-  registry.npmmirror.com/vitest@1.0.2(@types/node@18.19.3)(jsdom@23.0.1):
+  registry.npmmirror.com/vitest@1.0.2(@types/node@18.19.3)(jsdom@23.0.1)(sass@1.69.5):
     resolution: {integrity: sha512-F3NVwwpXfRSDnJmyv+ALPwSRVt0zDkRRE18pwUHSUPXAlWQ47rY1dc99ziMW5bBHyqwK2ERjMisLNoef64qk9w==, tarball: https://registry.npmmirror.com/vitest/-/vitest-1.0.2.tgz}
     id: registry.npmmirror.com/vitest/1.0.2
     name: vitest
@@ -3798,8 +3820,8 @@ packages:
       strip-literal: registry.npmmirror.com/strip-literal@1.3.0
       tinybench: registry.npmmirror.com/tinybench@2.5.1
       tinypool: registry.npmmirror.com/tinypool@0.8.1
-      vite: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)
-      vite-node: registry.npmmirror.com/vite-node@1.0.2(@types/node@18.19.3)
+      vite: registry.npmmirror.com/vite@5.0.6(@types/node@18.19.3)(sass@1.69.5)
+      vite-node: registry.npmmirror.com/vite-node@1.0.2(@types/node@18.19.3)(sass@1.69.5)
       why-is-node-running: registry.npmmirror.com/why-is-node-running@2.2.2
     transitivePeerDependencies:
       - less
