@@ -18,7 +18,7 @@ onMounted(() => getHotList())
           <ul class="goods-list">
             <li v-for="item in hotList" :key="item.id">
               <RouterLink to="/">
-                <img v-img-lazy="item.picture" alt="">
+                <el-image :key=item.id :src="item.picture" lazy class="elImg" />
                 <p class="name">{{ item.title }}</p>
                 <p class="desc">{{ item.alt }}</p>
               </RouterLink>
@@ -45,7 +45,8 @@ onMounted(() => getHotList())
       box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
     }
 
-    img {
+    img,
+    .elImg {
       width: 306px;
       height: 306px;
     }

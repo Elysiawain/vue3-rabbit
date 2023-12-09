@@ -20,7 +20,7 @@ onMounted(() => {
           <ul class="goods-list">
             <li v-for="item in newList" :key="item.id">
               <RouterLink to="/">
-                <img :src="item.picture" alt="" />
+                <el-image :key=item.id :src="item.picture" lazy class="elImg" />
                 <p class="name">{{ item.name }}</p>
                 <p class="price">¥{{ item.price }}</p>
               </RouterLink>
@@ -50,7 +50,8 @@ onMounted(() => {
       box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
     }
 
-    img {
+    img ,
+    .elImg{
       width: 306px;
       height: 306px;
     }
