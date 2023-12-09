@@ -27,7 +27,11 @@ onMounted(() => {
             </strong>
           </RouterLink>
           <!-- 调用商品组件 -->
-          <GoodsItem :goodsDetail="cate" />
+          <ul class="goods-list">
+            <li v-for="good in cate.goods" :key="good.id">
+              <GoodsItem :goodDetail="good" />
+            </li>
+          </ul>
         </div>
       </template>
     </HomePanel>
@@ -60,6 +64,27 @@ onMounted(() => {
 
   .box {
     display: flex;
+
+    .goods-list {
+      width: 990px;
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        width: 240px;
+        height: 300px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        &:nth-last-child(-n + 4) {
+          margin-bottom: 0;
+        }
+
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+      }
+    }
 
     .cover {
       width: 240px;
