@@ -7,3 +7,11 @@ export const getCategoryAPI = () => {
         method: "get"
     });
 }
+
+// 获取轮播图片数据
+export const getBannerAPI = () => {
+    return request({
+        url: "/home/banner",
+        method: "get"
+    });
+}
