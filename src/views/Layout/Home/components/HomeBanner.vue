@@ -10,7 +10,6 @@ const getBannerList = async () => {
 }
 
 onMounted(() => getBannerList())
-console.log(bannerList.value)
 
 </script>
 
