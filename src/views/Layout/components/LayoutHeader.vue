@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { useCategoryStore } from '@/stores/CategoryStore';
-const categoryStore = useCategoryStore();
+import { ref } from 'vue'
+const categoryStore = useCategoryStore()
+// 首页激活
+const homeActive = ref<boolean>(true)
+const setHomeActive = (active:boolean) => {
+    homeActive.value=active
+}
 </script>
 
 <template>
@@ -11,10 +17,11 @@ const categoryStore = useCategoryStore();
             </h1>
             <ul class="app-header-nav">
                 <li class="home">
-                    <router-link to="/">首页</router-link>
+                    <router-link to="/" :active-class="homeActive?'active':''" @click="setHomeActive(true)">首页</router-link>
                 </li>
                 <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
-                    <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
+                    <RouterLink @click="setHomeActive(false)" active-class="active" :to="`/category/${item.id}`">{{
+                        item.name }}</RouterLink>
                 </li>
             </ul>
             <div class="search">
@@ -128,6 +135,4 @@ const categoryStore = useCategoryStore();
         }
     }
 }
-
-
 </style>
