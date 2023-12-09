@@ -8,10 +8,34 @@ export const getCategoryAPI = () => {
     });
 }
 
-// 获取轮播图片数据
+
+/**
+ * 获取轮播图片数据
+ * @returns 
+ */
 export const getBannerAPI = () => {
     return request({
         url: "/home/banner",
+        method: "get"
+    });
+}
+/**
+ * 新鲜好物
+ * @returns 
+ */
+export const getFindNewAPI = () => {
+    return request({
+        url: "/home/new",
+        method: "get"
+    });
+}
+/**
+ * 热门好货
+ * @returns 
+ */
+export const getFindHotAPI = () => {
+    return request({
+        url: "/home/hot",
         method: "get"
     });
 }
