@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import App from './App.vue'
 import router from './router'
+import '@/styles/common.scss'
 // import { getCategoryAPI } from '@/api/Test'
 const app = createApp(App)
 
@@ -18,6 +19,5 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 //   categoryList = res.data
 //   console.log(categoryList);
 // })
-
 
 app.mount('#app')
