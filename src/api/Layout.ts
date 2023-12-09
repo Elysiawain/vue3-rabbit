@@ -39,3 +39,13 @@ export const getFindHotAPI = () => {
         method: "get"
     });
 }
+/**
+ * 获取商品列表
+ * @returns 
+ */
+export const getProductAPI = () => {
+    return request({
+        url: "/home/goods",
+        method: "get",
+    });
+}
