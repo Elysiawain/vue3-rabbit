@@ -27,6 +27,11 @@ const router = createRouter({
           path: '/subCategory/:id',
           name: 'subCategory',
           component: () => import('@/views/Layout/Category/components/SubCategory.vue')
+        },
+        {
+          path:'/detail/:id',
+          name:'detail',
+          component:()=>import('@/views/Detail/index.vue')
         }
       ]
     },
@@ -34,7 +39,10 @@ const router = createRouter({
       path: '/:catchAll(.*)', //匹配所有路径
       component: () => import('@/views/404.vue')
     }
-  ]
+  ],
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router

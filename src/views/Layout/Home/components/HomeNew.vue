@@ -19,7 +19,7 @@ onMounted(() => {
         <div>
           <ul class="goods-list">
             <li v-for="item in newList" :key="item.id">
-              <RouterLink to="/">
+              <RouterLink :to="`/detail/${item.id}`">
                 <el-image :key=item.id :src="item.picture" lazy class="elImg" />
                 <p class="name">{{ item.name }}</p>
                 <p class="price">¥{{ item.price }}</p>
