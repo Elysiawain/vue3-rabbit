@@ -29,7 +29,7 @@ export const useCategory = () => {
     const categoryList = ref<any>({})
     const route = useRoute()
     const getCategoryList = async () => {
-        const { data: { result } } = await getCategory(route.params.id.toString())
+        const { data: { result } } = await getCategory(route.params.id)
         categoryList.value = result
         console.log(categoryList.value)
 

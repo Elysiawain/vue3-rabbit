@@ -21,13 +21,18 @@ const router = createRouter({
         {
           path: '/category/:id',
           name: 'category',
-          component: () => import('@/views/Layout/Category/index.vue')
+          component: () => import('@/views/Layout/Category/index.vue'),
+        },
+        {
+          path: '/subCategory/:id',
+          name: 'subCategory',
+          component: () => import('@/views/Layout/Category/components/SubCategory.vue')
         }
       ]
     },
     {
-      path:'/:catchAll(.*)', //匹配所有路径
-      component:()=>import('@/views/404.vue')
+      path: '/:catchAll(.*)', //匹配所有路径
+      component: () => import('@/views/404.vue')
     }
   ]
 })
