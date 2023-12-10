@@ -1,30 +1,11 @@
 <script setup lang="ts">
-import { getCategory } from '@/api/Category'
-import { useRoute } from 'vue-router'
-import { ref, onMounted, watch } from 'vue'
-import { getBannerAPI } from '@/api/Category';
-import GoodsItem from '../Home/components/GoodsItem.vue';
-const categoryList = ref<any>({})
-const route = useRoute()
-const getCategoryList = async () => {
-    const { data: { result } } = await getCategory(route.params.id.toString())
-    categoryList.value = result
-    console.log(categoryList.value)
+import { useBanner,useCategory } from '@/utils/Hooks'
+import GoodsItem from '../Home/components/GoodsItem.vue'
 
-}
-watch(route, () => {
-    getCategoryList()
-})
+const {categoryList}=useCategory()
 
-onMounted(() => getCategoryList())
+const { bannerList } = useBanner()
 
-const bannerList = ref<any>([])
-const getBannerList = async () => {
-    await getBannerAPI(2).then((res) => {
-        bannerList.value = res.data?.result //?. 表示可选链操作符，用于在对象不存在某个属性时返回 undefined，而不是抛出错误。
-    });
-}
-onMounted(() => getBannerList())
 </script>
 
 <template>
@@ -90,6 +71,7 @@ onMounted(() => getBannerList())
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+
             li {
                 width: 168px;
                 height: 160px;

@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { getBannerAPI } from '@/api/Layout';
-import { onMounted, ref } from 'vue'
+import {useBanner}from'@/utils/Hooks'
 
-const bannerList = ref<any>([])
-const getBannerList = async () => {
-  await getBannerAPI().then((res) => {
-    bannerList.value=res.data?.result //?. 表示可选链操作符，用于在对象不存在某个属性时返回 undefined，而不是抛出错误。
-  });
-}
-
-onMounted(() => getBannerList())
-
+const {bannerList}=useBanner()
 </script>
 
 
